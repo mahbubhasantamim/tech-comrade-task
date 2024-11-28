@@ -1,3 +1,5 @@
+import MyFooter from "@/components/common/footer";
+import { MyHeader } from "@/components/common/header";
 import type { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "sonner";
@@ -16,13 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>
+      <body className={`antialiased bg-themeSecondary text-white`}>
         <NextTopLoader
           color="linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234))"
           speed={800}
           zIndex={9999}
         />
-        <QueryWrapper>{children}</QueryWrapper>
+        <QueryWrapper>
+          <MyHeader />
+          {children}
+          <MyFooter />
+        </QueryWrapper>
         <Toaster richColors />
       </body>
     </html>

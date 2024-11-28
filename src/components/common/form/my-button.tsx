@@ -1,9 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Button, ButtonProps } from "../../ui/button";
 
 interface IMyButton extends ButtonProps {
   title: string;
   loading?: boolean;
+  startIcon?: ReactNode;
+  endIcon?: ReactNode;
   onClick: () => void | Promise<void>;
 }
 
@@ -17,6 +19,8 @@ const MyButton = React.forwardRef<HTMLButtonElement, IMyButton>(
       className,
       size,
       asChild,
+      startIcon,
+      endIcon,
       ...props
     },
     ref
@@ -33,7 +37,15 @@ const MyButton = React.forwardRef<HTMLButtonElement, IMyButton>(
         variant={variant}
         {...props}
       >
-        {loading ? "loading..." : title}
+        {loading ? (
+          "loading..."
+        ) : (
+          <>
+            {startIcon && <>{startIcon}</>}
+            {title}
+            {endIcon && <>{endIcon}</>}
+          </>
+        )}
       </Button>
     );
   }

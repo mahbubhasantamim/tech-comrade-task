@@ -5,28 +5,20 @@ export const LinkConstant = {
       value: "/",
     },
     {
-      label: "About Us",
-      value: "/about-us",
+      label: "Services",
+      value: "/#services",
     },
     {
-      label: "Therapist",
-      value: "/find-therapist",
+      label: "Portfolio",
+      value: "/#portfolio",
     },
     {
-      label: "Blog",
-      value: "/",
+      label: "Team",
+      value: "/#team",
     },
     {
-      label: "How it works",
-      value: "/#how-it-works",
-    },
-    {
-      label: "Feedbacks",
-      value: "/#feedback",
-    },
-    {
-      label: "Contact us",
-      value: "/contact-us",
+      label: "Contact",
+      value: "/#contact",
     },
   ],
 };

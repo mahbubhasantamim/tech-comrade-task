@@ -29,7 +29,7 @@ export default function MyInput({
 }: IMyInput) {
   return (
     <div
-      className={`flex flex-col text-slate-600 dark:text-slate-400 ${className}`}
+      className={`flex flex-col text-white dark:text-slate-400 ${className}`}
     >
       {others.placeholder && !hideLabel && (
         <label
@@ -42,12 +42,12 @@ export default function MyInput({
       {isTextArea ? (
         <textarea
           id={others.name}
-          rows={3}
+          rows={6}
           ref={myRef}
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           {...(others as any)}
           //focus:ring-2 focus:ring-primary-light
-          className={`flex w-full rounded-md border  border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50  dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300  ${
+          className={`flex w-full rounded-md border  border-themePrimary bg-black px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50  dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300  ${
             error ? "ring-2 ring-danger" : ""
           }`}
         ></textarea>
@@ -67,7 +67,9 @@ export default function MyInput({
             id={others.name}
             placeholder={others.placeholder}
             {...others}
-            className={`${error ? "ring-2 ring-danger ring-offset-2" : ""}`}
+            className={`${
+              error ? "ring-2 ring-danger ring-offset-2" : ""
+            } bg-black border-themePrimary text-white placeholder:text-gray-300`}
           />
         </>
       )}
@@ -78,7 +80,7 @@ export default function MyInput({
 }
 
 interface IMyInputWithRHF<T extends FieldValues>
-  extends Omit<IMyInput, "mRef"> {
+  extends Omit<IMyInput, "myRef"> {
   name: Path<T>;
   control: Control<T>;
   rules?: RuleType;

@@ -1,6 +1,6 @@
-import { FieldValues, RegisterOptions } from "react-hook-form"
+import { FieldValues, RegisterOptions } from "react-hook-form";
 
 export type RuleType = Omit<
-    RegisterOptions<FieldValues, string>,
-    "valueAsNumber" | "valueAsDate" | "setValueAs" | "disabled"
->
+  RegisterOptions<FieldValues, string>,
+  "disabled" | "valueAsNumber" | "valueAsDate" | "setValueAs"
+>;
